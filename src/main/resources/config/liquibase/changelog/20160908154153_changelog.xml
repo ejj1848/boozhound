@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="ericjohn1 (generated)" id="1473349320910-1">
+        <dropUniqueConstraint constraintName="CONSTRAINT_7" tableName="JHI_SOCIAL_USER_CONNECTION"/>
+    </changeSet>
+    <changeSet author="ericjohn1 (generated)" id="1473349320910-2">
+        <dropUniqueConstraint constraintName="CONSTRAINT_71" tableName="JHI_SOCIAL_USER_CONNECTION"/>
+    </changeSet>
+    <changeSet author="ericjohn1 (generated)" id="1473349320910-3">
+        <dropUniqueConstraint constraintName="CONSTRAINT_8" tableName="CHECK_IN"/>
+    </changeSet>
+    <changeSet author="ericjohn1 (generated)" id="1473349320910-4">
+        <dropUniqueConstraint constraintName="CONSTRAINT_8A" tableName="CHECK_IN"/>
+    </changeSet>
+    <changeSet author="ericjohn1 (generated)" id="1473349320910-5">
+        <dropUniqueConstraint constraintName="CONSTRAINT_8A4" tableName="CHECK_IN"/>
+    </changeSet>
+    <changeSet author="ericjohn1 (generated)" id="1473349320910-6">
+        <dropDefaultValue columnDataType="timestamp" columnName="created_date" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="ericjohn1 (generated)" id="1473349320910-7">
+        <dropDefaultValue columnDataType="timestamp" columnName="last_modified_date" tableName="jhi_user"/>
+    </changeSet>
+</databaseChangeLog>

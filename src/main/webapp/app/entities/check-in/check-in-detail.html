@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Check In</span> {{vm.checkIn.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Notes</span></dt>
+        <dd>
+            <span>{{vm.checkIn.notes}}</span>
+        </dd>
+        <dt><span>Location</span></dt>
+        <dd>
+            <a ui-sref="location-detail({id:vm.checkIn.location.id})">{{vm.checkIn.location.id}}</a>
+        </dd>
+        <dt><span>Distiller</span></dt>
+        <dd>
+            <a ui-sref="distiller-detail({id:vm.checkIn.distiller.id})">{{vm.checkIn.distiller.id}}</a>
+        </dd>
+        <dt><span>Bourbon</span></dt>
+        <dd>
+            <a ui-sref="bourbon-detail({id:vm.checkIn.bourbon.id})">{{vm.checkIn.bourbon.id}}</a>
+        </dd>
+        <dt><span>Person</span></dt>
+        <dd>
+            <a ui-sref="person-detail({id:vm.checkIn.person.id})">{{vm.checkIn.person.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="check-in-detail.edit({id:vm.checkIn.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

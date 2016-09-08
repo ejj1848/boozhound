@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "distiller",
+            "otherEntityName": "distiller",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "checkin",
+            "otherEntityName": "checkIn",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "bourbon"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "bourbonName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "proof",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "year",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "bourbonRating",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160907201802",
+    "entityTableName": "bourbon",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "angularSuffix": "mySuffix"
+}

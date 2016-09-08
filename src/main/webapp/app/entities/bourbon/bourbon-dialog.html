@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myBourbonLabel">Create or edit a Bourbon</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.bourbon.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.bourbon.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_bourbonName">Bourbon Name</label>
+            <input type="text" class="form-control" name="bourbonName" id="field_bourbonName"
+                    ng-model="vm.bourbon.bourbonName"
+                    required />
+            <div ng-show="editForm.bourbonName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bourbonName.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_proof">Proof</label>
+            <input type="text" class="form-control" name="proof" id="field_proof"
+                    ng-model="vm.bourbon.proof"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_year">Year</label>
+            <input type="number" class="form-control" name="year" id="field_year"
+                    ng-model="vm.bourbon.year"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_bourbonRating">Bourbon Rating</label>
+            <input type="number" class="form-control" name="bourbonRating" id="field_bourbonRating"
+                    ng-model="vm.bourbon.bourbonRating"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_distiller">Distiller</label>
+            <select class="form-control" id="field_distiller" name="distiller" ng-model="vm.bourbon.distiller" ng-options="distiller as distiller.distillerName for distiller in vm.distillers track by distiller.distillerName">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

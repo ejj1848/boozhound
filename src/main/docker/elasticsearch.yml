@@ -1,0 +1,10 @@
+version: '2'
+services:
+    boozhound-elasticsearch:
+        container_name: boozhound-elasticsearch
+        image: elasticsearch:2.3.5
+        # volumes:
+        #     - ~/volumes/jhipster/boozhound/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300

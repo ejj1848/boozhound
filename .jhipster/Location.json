@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "distiller",
+            "otherEntityName": "distiller",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "checkin",
+            "otherEntityName": "checkIn",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "location"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "locationName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "streetAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "geoLat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "geoLng",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160907201858",
+    "entityTableName": "location",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularSuffix": "mySuffix"
+}

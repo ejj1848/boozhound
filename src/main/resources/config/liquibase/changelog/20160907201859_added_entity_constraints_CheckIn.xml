@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity CheckIn.
+    -->
+    <changeSet id="20160907201859-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="check_in"
+                                 constraintName="fk_check_in_location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"/>
+
+        <addForeignKeyConstraint baseColumnNames="distiller_id"
+                                 baseTableName="check_in"
+                                 constraintName="fk_check_in_distiller_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="distiller"/>
+
+        <addForeignKeyConstraint baseColumnNames="bourbon_id"
+                                 baseTableName="check_in"
+                                 constraintName="fk_check_in_bourbon_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bourbon"/>
+
+        <addForeignKeyConstraint baseColumnNames="person_id"
+                                 baseTableName="check_in"
+                                 constraintName="fk_check_in_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="person"/>
+
+    </changeSet>
+</databaseChangeLog>

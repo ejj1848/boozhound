@@ -1,0 +1,84 @@
+<div>
+    <h2>Bourbons</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="bourbon.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs" >
+                        Create new Bourbon
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="Query">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <!--<th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th jh-sort-by="bourbonName"><span>Bourbon Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="proof"><span>Proof</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="year"><span>Year</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bourbonRating"><span>Bourbon Rating</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="distiller.id"><span>Distiller</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="bourbon in vm.bourbons track by bourbon.id">
+                    <!--<td><a ui-sref="bourbon-detail({id:bourbon.id})">{{bourbon.id}}</a></td>-->
+                    <hidden id="bourbonId"/>
+                    <td>{{bourbon.bourbonName}}</td>
+                    <td>{{bourbon.proof}}</td>
+                    <td>{{bourbon.year}}</td>
+                    <td>{{bourbon.bourbonRating}}</td>
+                    <td>
+                        <a ui-sref="distiller-detail({id:bourbon.distiller.id})">{{bourbon.distiller.distillerName}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="bourbon-detail({id:bourbon.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="bourbon.edit({id:bourbon.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="bourbon.delete({id:bourbon.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "location",
+            "otherEntityName": "location",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "checkin"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "distiller",
+            "otherEntityName": "distiller",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "checkin"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "bourbon",
+            "otherEntityName": "bourbon",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "checkin"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "person",
+            "otherEntityName": "person",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "notes",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160907201859",
+    "entityTableName": "check_in",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularSuffix": "mySuffix"
+}
