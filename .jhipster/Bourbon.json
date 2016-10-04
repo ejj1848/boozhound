@@ -8,7 +8,7 @@
             "otherEntityField": "id"
         },
         {
-            "relationshipType": "one-to-one",
+            "relationshipType": "many-to-many",
             "relationshipName": "checkin",
             "otherEntityName": "checkIn",
             "ownerSide": false,
